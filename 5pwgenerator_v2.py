@@ -1,12 +1,13 @@
 # updated version of pw generator i created before
 import random
-def validate(element):
-    if element < 0 or element > 6:
+def validate(msg):
+  while True:
+    value=int(input(msg))
+    if 0<= value <=6 :
+        return value
+    else:
         print("Number can't be -ve or greater the 6 ")
-        return 1
-
-
-
+        
 
 
 
@@ -17,28 +18,13 @@ def generatepw():
     numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
     passwordkeys = []
-    while True:
-          nr_letters = int(input("How many letters would you like in your password?\n"))
-          status=validate(nr_letters)
-          if status== 1:
-             continue
-          else:
-              break
-    while True:
-          nr_symbols = int(input(f"How many symbols would you like?\n"))
-          status = validate(nr_symbols)
-          if status == 1:
-              continue
-          else:
-              break
-    while True:
 
-          nr_numbers = int(input(f"How many numbers would you like?\n"))
-          status = validate(nr_numbers)
-          if status == 1:
-              continue
-          else:
-              break
+    nr_letters = validate("How many letters would you like in your password?\n")
+
+    nr_symbols = validate("How many symbols would you like?\n")
+
+    nr_numbers = validate("How many numbers would you like?\n")
+
 
     for i in range(0, nr_letters):
         choosen_letters = random.choice(letters)
