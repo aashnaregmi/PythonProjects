@@ -28,7 +28,7 @@ while True:
     easy=10
     hard=5
     print(" ")
-    print("Welcome to my number guessing game!!")
+    print("Welcome to my Number Guessing Game!!")
     print(" ")
 
     level=input("Choose a difficulty level: ")
@@ -38,10 +38,10 @@ while True:
         break
     elif level=="hard":
         makeguess(hard)
-
         break
     else:
-        print ("Choose between easy of hard!! ")
+        print ("Choose between easy of hard!!")
         continue
+
 
         
