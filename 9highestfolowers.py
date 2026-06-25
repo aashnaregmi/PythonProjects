@@ -1,6 +1,4 @@
 import random
-
-
 celebrity_list = [
     {
         "name": "Kylie Jenner",
@@ -123,8 +121,6 @@ celebrity_list = [
         "followers": 142_000_000
     }
 ]
-
-
 def display_people(a,b):
 
     print(" ")
@@ -135,10 +131,30 @@ def display_people(a,b):
 def increase_score(score):
     return score+1
 
+def welcome_msg():
+    print(" ")
+    print("=" * 55)
+    print(" ")
+
+    print("        🎮 WELCOME TO THE HIGHER LOWER GAME 🎮")
+    print(" ")
+
+    print("_" * 55)
+    print("Guess which celebrity or brand has MORE followers!")
+    print("Type 'A' or 'B' to make your choice.")
+    print("Each correct answer earns 1 point.")
+    print("One wrong answer and the game is over!")
+    print("=" * 55)
+    print()
 
 
 
 
+
+
+
+
+welcome_msg()
 score=0
 a = random.randint(0, len(celebrity_list) - 1)
 
