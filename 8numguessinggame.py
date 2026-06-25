@@ -3,6 +3,27 @@ import random
 
 choosen_num=random.randint(1,100)
 print(choosen_num)
+def makeguess(attempts):
+        attempt=attempts
+        while attempt != 0:
+              print(f"You have {attempt} attempts")
+              global choosen_num
+              guess=int(input("Make a guess :"))
+              if guess==choosen_num:
+                  print("Correct☑️\nYou won!!🏅")
+                  break
+              elif guess>choosen_num:
+                  print("high⬆")
+                  attempt-=1
+
+              elif guess<choosen_num:
+                  print("low⬇")
+                  attempt-=1
+        if attempt ==0:
+          print(f"You lose!!😔\nThe correct number is {choosen_num}")  
+
+    
+    
 
 while True:
     easy=10
@@ -10,10 +31,11 @@ while True:
     level=input("Choose a difficulty level: ")
     
     if level=="easy":
-        print(f"You have {easy} attemps")
+        makeguess(easy)
         break
     elif level=="hard":
-        print(f"You have {easy} attemps")
+        makeguess(hard)
+
         break
     else:
         print ("Choose between easy of hard!! ")
