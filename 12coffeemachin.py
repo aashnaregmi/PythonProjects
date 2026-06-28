@@ -15,7 +15,7 @@ recources_needed={
          
     
   },
-  "capaccino":{
+  "cappuccino":{
          "water":250,
          "milk":100,
          "coffee":24,
@@ -61,14 +61,17 @@ print("• cappuccino")
 print("• report  - View machine resources")
 print("• off     - Turn off the coffee machine")
 print("=" * 45)
-def check_resources(order):
-  for key in resources_available:
-    if recources_needed[order][key]>resources_available[key]:
-        print(f"Sorry there is not enough {key}.")
-        break
-  else:
-        return "enough"
-# def calculateamt(total_amt):
+
+
+    
+
+    
+#5   
+def report_status():
+    for key in resources_available:
+        print(f"{key}: {resources_available[key]}")
+    print(f"money :{money}")
+# 4
 def calculate_money(order,amt_received):
     order_amt=recources_needed[order]["cost"]
     if order_amt>amt_received:
@@ -80,14 +83,15 @@ def calculate_money(order,amt_received):
          returnmoney=round(amt_received-order_amt,2)
          print(f"The returned amount :{returnmoney}")
          print("Enjoy your order!!")
-         money=amt_received -returnmoney
-         print(money)
+         money=round(amt_received -returnmoney,2)
+         return money
     else:
+         money=amt_received
          print("Enjoy your order!!")
-         return
-        
-     
+         return money
+            
     
+#3rd
 def ask_coin():
     print("\nPlease insert coins.")
     quarters_amt = float(input("How many quarters?: "))
@@ -101,33 +105,41 @@ def ask_coin():
     pennies_amt * coins["penny"]
 )   
     total_amt=round(total_amt,2)
-    print(total_amt)
+    print(f"The total amount received is {total_amt}")
     return total_amt
     
     
-def report_status():
-    for key in resources_available:
-        print(f"{key}: {resources_available[key]}")
-    print(f"money :{money}")
-    
-    
-
+#2nd
 def process_order(order):
-    if order =="r":
+    if order == "report":
        report_status()
+       return
        
     resources_status=check_resources(order)
     if resources_status =="enough":
        total_amt_received= ask_coin()
-       calculate_money(order,total_amt_received)
+       money_got=calculate_money(order,total_amt_received)
+       return money_got
+#1st     
+def check_resources(order):
+  for key in resources_available:
+    if recources_needed[order][key]>resources_available[key]:
+        print(f"Sorry there is not enough {key}.")
+        break
+  else:
+        return "enough"
     
     
 
 while True:
   welcome_msg()
   order=input("What is your order(Espresso,Latte,Cappuccino)?").lower()
-  process_order(order)
-  print("end")
+  received=process_order(order)
+  if received!=None:
+     money+=received
+  
+  
+  
   
   
  
