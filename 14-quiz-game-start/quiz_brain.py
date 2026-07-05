@@ -11,6 +11,7 @@ class QuizBrain:
        
         
     def check_answer(self,user_ans,correct_ans):
+      
       if user_ans.lower()==correct_ans.lower():
          print("You got it right")
          self.score += 1
@@ -24,6 +25,11 @@ class QuizBrain:
       correct_ans=self.q_list[ self.question_no].ans
       self.question_no+=1
       user_ans=input(f"Q{self.question_no}:{question} ")
+      while user_ans.lower() != "true" and user_ans.lower() != "false":
+         print('Enter true or false:')
+         user_ans=input(f"Q{self.question_no}:{question} ")
+
+         
       self.check_answer(user_ans,correct_ans)
       
     
