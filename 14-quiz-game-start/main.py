@@ -1,16 +1,24 @@
 from data import question_data
+from quiz_brain import QuizBrain
 class Question:
       def __init__(self,question,ans):
             self.que=question
             self.ans=ans
-      def askquestion(self):
-            user_ans=input(f"{self.que} : ")
-            if user_ans==self.ans:
-               print("You are correct")
-            else:
-              print("You are not correct")
+      
             
             
             
-q1=Question(question_data[0]["text"],question_data[0]["answer"])
-q1.askquestion()
+question_bank=[]
+for i in range (0,len(question_data)):
+    q=question_data[i]["text"]
+    a=question_data[i]["answer"]
+    question_bank.append(Question(q,a))
+
+    
+quiz=QuizBrain(question_bank)
+
+while quiz.still_has_question():
+      quiz.askque()
+      
+      
+print(f"Final score: {quiz.score}/{len(question_bank)}")
