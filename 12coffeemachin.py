@@ -139,11 +139,19 @@ def process_order(order):
 
 
 welcome_msg()
-while True:
 
-    order = input("What is your order(Espresso,Latte,Cappuccino)?").lower()
+is_on = True
+
+while is_on:
+    order = input("What is your order(Espresso, Latte, Cappuccino)? ").lower()
+
+    if order == "off":
+        is_on = False
+        continue
+
     received = process_order(order)
-    if received != None:
+
+    if received is not None:
         money += received
 
 
