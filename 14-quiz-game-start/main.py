@@ -8,6 +8,14 @@ class Question:
         self.ans = ans
 
 
+print("=" * 40)
+print("      Welcome to the Quiz App!!")
+print("-" * 40)
+print(f"There are {len(question_data)} questions.")
+print("Type 'True' or 'False' to answer each \nquestion.")
+print("=" * 40)
+print("\n")
+
 question_bank = []
 for i in range(0, len(question_data)):
     q = question_data[i]["question"]
