@@ -13,7 +13,6 @@ colors = [
     "pink",
     "brown",
     "black",
-    "cyan",
 ]
 
 tim = Turtle()
