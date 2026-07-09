@@ -1,5 +1,7 @@
 import random
-stages = [r'''
+
+stages = [
+    r"""
   +---+
   |   |
   O   |
@@ -7,7 +9,8 @@ stages = [r'''
  / \  |
       |
 =========
-''', r'''
+""",
+    r"""
   +---+
   |   |
   O   |
@@ -15,7 +18,8 @@ stages = [r'''
  /    |
       |
 =========
-''', r'''
+""",
+    r"""
   +---+
   |   |
   O   |
@@ -23,14 +27,16 @@ stages = [r'''
       |
       |
 =========
-''', '''
+""",
+    """
   +---+
   |   |
   O   |
  /|   |
       |
       |
-=========''', '''
+=========""",
+    """
   +---+
   |   |
   O   |
@@ -38,7 +44,8 @@ stages = [r'''
       |
       |
 =========
-''', '''
+""",
+    """
   +---+
   |   |
   O   |
@@ -46,7 +53,8 @@ stages = [r'''
       |
       |
 =========
-''', '''
+""",
+    """
   +---+
   |   |
       |
@@ -54,22 +62,21 @@ stages = [r'''
       |
       |
 =========
-''']
+""",
+]
 import random
+
 word_list = ["aardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
-totallen=len(chosen_word)
+totallen = len(chosen_word)
 placeholder = ["_"] * totallen
 
 lifeline = 6
-guessedword=[]
+guessedword = []
 
 
-
-
-
-while  lifeline >0 and "_" in placeholder:
-    placeholderstr="".join(placeholder)
+while lifeline > 0 and "_" in placeholder:
+    placeholderstr = "".join(placeholder)
     print(f"Guess word :{placeholderstr}")
     guess = input("Guess a letter : ").lower()
     if guess in guessedword:
@@ -77,32 +84,23 @@ while  lifeline >0 and "_" in placeholder:
     else:
         guessedword.append(guess)
         if len(guess) != 1 or not guess.isalpha():
-           print("Please enter only one alphabet.")
-           continue
+            print("Please enter only one alphabet.")
+            continue
         if guess in chosen_word:
-         for i in range(0,totallen):
-           if chosen_word[i]==guess:
-               placeholder[i]=guess
+            for i in range(0, totallen):
+                if chosen_word[i] == guess:
+                    placeholder[i] = guess
 
         else:
-            print(f"\'{guess}\' is not there ")
-            lifeline-=1
+            print(f"'{guess}' is not there ")
+            lifeline -= 1
             print(f"{stages[lifeline]}")
             print(f"lifeline:{lifeline}/6")
 
 
 if "_" not in placeholder:
-        print("You won")
+    print("You won")
 else:
-        
-        print("You loose")
-        print(f"The correct word in {chosen_word}")
 
-
-
-
-
-
-
-
-
+    print("You loose")
+    print(f"The correct word in {chosen_word}")
