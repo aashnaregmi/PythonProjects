@@ -2,55 +2,62 @@
 
 Welcome to my **100 Days of Code** journey! 👋
 
-
-
 This repository contains **all of my daily Python projects ** from the **100 Days of Code: The Complete Python Pro Bootcamp**. Rather than creating a separate repository for every small project, I maintain this repository as a complete record of my growth throughout the challenge.
 
 ## 🎯 Goals
 
-* Build a strong foundation in Python
-* Develop problem-solving skills
-* Learn clean coding practices
-* Practice Git and GitHub consistently
-* Build projects every day
-* Document my progress publicly
+- Build a strong foundation in Python
+- Develop problem-solving skills
+- Learn clean coding practices
+- Practice Git and GitHub consistently
+- Build projects every day
+- Document my progress publicly
 
 ## 📂 Repository Contents
 
 This repository includes projects such as:
 
-* 🎸 Band Name Generator
-* ⚖️ BMI Calculator
-* 💰 Tip Calculator
-* 🏝️ Treasure Island
-* ✂️ Rock Paper Scissors
-* 🔐 Password Generator
-* 🧩 Escaping the Maze
-* 🎮 Hangman
-* 🔒 Caesar Cipher
-* ❤️ Love Calculator
-* 🏆 Secret Auction
-* 🧮 Calculator
-* 🎯 Number Guessing Game
-* 📈 Higher Lower Game
+- 🎸 Band Name Generator
+- ⚖️ BMI Calculator
+- 💰 Tip Calculator
+- 🏝️ Treasure Island
+- ✂️ Rock Paper Scissors
+- 🔐 Password Generator
+- 🧩 Escaping the Maze
+- 🎮 Hangman
+- 🔒 Caesar Cipher
+- ❤️ Love Calculator
+- 🏆 Secret Auction
+- 🧮 Calculator
+- 🎯 Number Guessing Game
+- 📈 Higher Lower Game
+- ❓ True/False Quiz Game (OOP)
+- 🐢 Turtle Graphics
+  - ⬜ Square Drawing
+  - ➖ Dashed Line
+  - 🔷 Polygon Drawing
+  - 🌈 Colorful Polygons
+  - 🌀 Spirograph
+  - 🎨 Hirst Dot Painting
+  - 🌈 Color Palette Extraction with Colorgram
 
 ...and many more projects as I continue the challenge.
 
 ## 🛠️ Technologies
 
-* Python 3
-* Git
-* GitHub
+- Python 3
+- Git
+- GitHub
 
 ## 📈 Progress
 
 I update this repository regularly with:
 
-* Daily coding exercises
-* Project improvements and refactoring
-* Meaningful Git commits
-* New Python concepts
-* Better coding practices as I learn
+- Daily coding exercises
+- Project improvements and refactoring
+- Meaningful Git commits
+- New Python concepts
+- Better coding practices as I learn
 
 ## 🌱 Learning Philosophy
 
