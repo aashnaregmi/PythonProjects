@@ -4,7 +4,6 @@ import random
 screen = Screen()
 screen.colormode(255)
 timmy_the_turtle = Turtle()
-# timmy_the_turtle.shape("turtle")
 
 
 timmy_the_turtle.speed("fastest")
