@@ -27,12 +27,24 @@ for i in range(number_of_turtle):
     colorchoosen.append(turtlecolor)
     t.penup()
     t.goto(-200, -100 + (i * 40))
-    t.pendown()
+
     turtles.append(t)
 race_on = True
-endpoint = 100
+endpoint = 200
+# hidden turtle
+finishline = Turtle()
+finishline.penup()
+finishline.hideturtle()
+finishline.pensize(5)
+finishline.goto(200, -300)
+finishline.setheading(90)
+finishline.pendown()
+finishline.forward(770)
+
+
 while race_on:
     for turtle in turtles:
+
         turtle.forward(random.randint(1, 10))
         if turtle.xcor() >= endpoint:
             race_on = False
