@@ -29,6 +29,15 @@ for i in range(number_of_turtle):
     t.goto(-200, -100 + (i * 40))
     t.pendown()
     turtles.append(t)
+race_on = True
+endpoint = 100
+while race_on:
+    for turtle in turtles:
+        turtle.forward(random.randint(1, 10))
+        if turtle.xcor() >= endpoint:
+            race_on = False
+            print(f"The winner is the {turtle.pencolor()} turtle!")
+            break
 
 
 screen = Screen()
