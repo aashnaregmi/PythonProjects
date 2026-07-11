@@ -13,8 +13,10 @@ class Snake:
         for position in starting_positions:
             segment = Turtle("square")
             segment.color("white")
+            segment.shapesize(stretch_wid=1, stretch_len=1)
             segment.penup()
             segment.goto(position)
+
             self.bodyofsnake.append(segment)
 
     def control_snake_body(self):
