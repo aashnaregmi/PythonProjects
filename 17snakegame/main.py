@@ -18,14 +18,43 @@ for position in starting_positions:
     segment.goto(position)
     bodyofsnake.append(segment)
 
+
+def control_snake_body():
+    for i in range(len(bodyofsnake) - 1, 0, -1):
+        x = bodyofsnake[i - 1].xcor()
+        y = bodyofsnake[i - 1].ycor()
+        bodyofsnake[i].goto(x, y)
+
+
+def up():
+    bodyofsnake[0].setheading(90)
+
+
+def left():
+    bodyofsnake[0].setheading(180)
+
+
+def right():
+    bodyofsnake[0].setheading(0)
+
+
+def down():
+    bodyofsnake[0].setheading(270)
+
+
+screen.listen()
+screen.onkey(fun=right, key="Right")
+screen.onkey(fun=down, key="Down")
+screen.onkey(fun=up, key="Up")
+screen.onkey(fun=left, key="Left")
+
+
 game_on = True
 while game_on:
+
+    time.sleep(0.15)  # Stop the program for 0.15 sec
+    control_snake_body()  # 3--control movement--
+    bodyofsnake[0].forward(20)  # 2--move--
     screen.update()
-
-    for segment in bodyofsnake:
-        segment.penup()
-        time.sleep(0.15)  # Stop the program for 0.15 sec
-        segment.forward(20)  # 2--move--
-
 
 screen.exitonclick()
