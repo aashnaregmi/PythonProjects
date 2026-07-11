@@ -1,6 +1,7 @@
 from turtle import Turtle, Screen
 import time
 from snake import Snake
+from food import Food
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -20,6 +21,9 @@ screen.onkey(fun=s.left, key="Left")
 
 
 game_on = True
+f = Food()
+
+f.add_food()
 while game_on:
 
     time.sleep(0.15)  # Stop the program for 0.15 sec
