@@ -29,6 +29,20 @@ screen.onkey(fun=s.left, key="Left")
 game_on = True
 
 
+def handle_collision(head):
+    if (
+        head.xcor() > 270
+        or head.xcor() < -270
+        or head.ycor() > 270
+        or head.ycor() < -270
+    ):
+        return False
+    for segment in s.bodyofsnake[1:]:
+        if head.distance(segment) < 15:
+            return False
+    return True
+
+
 f.add_food()
 while game_on:
     head = s.bodyofsnake[0]
@@ -37,17 +51,11 @@ while game_on:
 
     s.control_snake_body()
     head.forward(20)
-    if (
-        head.xcor() > 270
-        or head.xcor() < -270
-        or head.ycor() > 270
-        or head.ycor() < -270
-    ):
-        game_on = False
 
+    game_on = handle_collision(head)
+    if game_on == False:
         game_over_text.goto(0, 0)
         game_over_text.write("GAME OVER", align="center", font=("Arial", 24, "bold"))
-
     elif head.distance(f.food) < 15:
         score += 1
 
