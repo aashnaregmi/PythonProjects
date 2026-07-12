@@ -32,7 +32,8 @@ game_on = True
 f.add_food()
 while game_on:
     head = s.bodyofsnake[0]
-    time.sleep(0.15)
+
+    time.sleep(0.2)
 
     s.control_snake_body()
     head.forward(20)
@@ -49,10 +50,11 @@ while game_on:
 
     elif head.distance(f.food) < 15:
         score += 1
+
         screen.title(f"Snake Game -Score:{score}")
-
+        increase_body = 1
+        s.add_segment(increase_body)
         f.add_food()
-
     screen.update()
 
 screen.exitonclick()
