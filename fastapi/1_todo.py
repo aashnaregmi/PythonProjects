@@ -38,3 +38,28 @@ def get_todo(todo_id: int):
             return todo
 
     return {"message": "Not found"}
+
+
+# UPDATE
+@app.put("/todos/{todo_id}")
+def update_todo(todo_id: int, updated_todo: Todo_data):
+    for todo in todos:
+        if todo.id == todo_id:
+            todo.title = updated_todo.title
+            todo.description = updated_todo.description
+            todo.completed = updated_todo.completed
+
+            return todo
+
+    return {"message": "Not found"}
+
+
+# DELETE
+@app.delete("/todos/{todo_id}")
+def delete_todo(todo_id: int):
+    for todo in todos:
+        if todo.id == todo_id:
+            todos.remove(todo)
+            return {"message": "Deleted"}
+
+    return {"message": "Not found"}
